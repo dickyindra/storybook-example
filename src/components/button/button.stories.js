@@ -21,6 +21,8 @@ const stories = storiesOf("Button", module)
 
 stories.addDecorator(withKnobs)
 
+stories.addDecorator(storyFn => <div className='p-2'>{storyFn()}</div>)
+
 stories.add("Default", () => (
     <Button disabled={boolean("Disabled", false)} onClick={action("clicked")}>
         {text("Label", "Default Button")}
