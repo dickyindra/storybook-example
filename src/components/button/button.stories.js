@@ -4,6 +4,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs"
 import { action } from "@storybook/addon-actions"
 
 import Button from "./button"
+import ButtonReadme from "./button.readme.md"
 
 const variantOptions = {
     Primary: "primary",
@@ -20,8 +21,13 @@ const variantOptions = {
 const stories = storiesOf("Components|Button", module)
 
 stories.addDecorator(withKnobs)
-
 stories.addDecorator(storyFn => <div className='p-2'>{storyFn()}</div>)
+
+stories.addParameters({
+    readme: {
+        sidebar: ButtonReadme
+    }
+})
 
 stories.add("Default", () => (
     <Button disabled={boolean("Disabled", false)} onClick={action("clicked")}>
