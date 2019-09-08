@@ -17,7 +17,7 @@ const variantOptions = {
     Link: "link"
 }
 
-const stories = storiesOf("Button", module)
+const stories = storiesOf("Components|Button", module)
 
 stories.addDecorator(withKnobs)
 
